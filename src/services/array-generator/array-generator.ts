@@ -1,5 +1,6 @@
 import { IArrayGenerator, IValueGenerator } from '../../interfaces';
 import { instanceOfStickyValueGenerator } from '../../helpers/type-guard';
+import { logInfo } from '../../helpers/logger';
 
 export class ArrayGenerator<T> implements IArrayGenerator {
   private _arrays: T[][] = [];
@@ -23,8 +24,8 @@ export class ArrayGenerator<T> implements IArrayGenerator {
 
   public printResult(): void {
     this._arrays.forEach((arr, index) => {
-      console.log(`Row ${index}:`);
-      console.log(arr);
+      logInfo(`Row ${index}:`);
+      logInfo(JSON.stringify(arr));
     });
 
     if (instanceOfStickyValueGenerator(this.valueGenerator)) {

@@ -1,3 +1,4 @@
+import { logInfo } from '../../helpers/logger';
 import { IStickyValueGenerator } from '../../interfaces';
 
 export class StickyValueGenerator implements IStickyValueGenerator<number> {
@@ -30,8 +31,8 @@ export class StickyValueGenerator implements IStickyValueGenerator<number> {
   }
 
   public printStickyIndexes(): void {
-    console.log('Sticky positions:');
-    console.log(this.stickyIndexes);
+    logInfo('Sticky positions:');
+    logInfo(JSON.stringify(this.stickyIndexes));
   }
 
   private getRandomIntInclusive(min: number, max: number): number {
