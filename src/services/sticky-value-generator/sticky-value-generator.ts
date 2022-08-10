@@ -15,7 +15,7 @@ export class StickyValueGenerator implements IStickyValueGenerator<number> {
 
   public generateValue(index?: number): number {
     const value = this.getRandomIntInclusive(this.minValue, this.maxValue);
-    if(index === undefined) {
+    if (index === undefined) {
       return value;
     }
 
